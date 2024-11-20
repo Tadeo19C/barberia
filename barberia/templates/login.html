@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Iniciar sesión - Barbería{% endblock %}
+
+{% block content %}
+    <h1>Iniciar sesión</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email(class="form-control", placeholder="Correo electrónico") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.contraseña.label }}
+            {{ form.contraseña(class="form-control", placeholder="Contraseña") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+
+    <a href="{{ url_for('register') }}">¿No tienes cuenta? Regístrate aquí</a>
+{% endblock %}

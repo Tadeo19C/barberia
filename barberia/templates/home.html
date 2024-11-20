@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Inicio - Barbería{% endblock %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); min-height: 100vh; font-family: 'Arial', sans-serif;">
+    <header style="background-color: #1a237e; color: white; padding: 20px 0; text-align: center;">
+        <h1 style="margin: 0; font-size: 2.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Empire Style BarberShop</h1>
+    </header>
+
+    <div class="hero" style="background-image: url('https://example.com/barber-shop-image.jpg'); background-size: cover; background-position: center; height: 60vh; display: flex; align-items: center; justify-content: center; position: relative;">
+        <div style="background-color: rgba(26, 35, 126, 0.7); padding: 30px; border-radius: 10px; max-width: 600px; text-align: center;">
+            <h2 style="color: white; font-size: 2em; margin-bottom: 20px;">Cortes Clásicos, Estilo Moderno</h2>
+            <a href="{{ url_for('cita') }}" style="background-color: #d32f2f; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: background-color 0.3s;">Agendar Cita</a>
+        </div>
+        <div style="position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: white; background-color: rgba(0,0,0,0.5); padding: 10px;">
+            <p style="margin: 0;">Abierto los 7 días de la semana | 9AM - 8PM</p>
+        </div>
+        <div style="position: absolute; top: 20px; right: 20px; background-color: rgba(255,255,255,0.8); padding: 10px; border-radius: 5px; display: flex; align-items: center;">
+            <svg class="air-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 24px; height: 24px; margin-right: 10px;">
+                <path fill="#1a237e" d="M8.5 4a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm0 7a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm7-7a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm0 7a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z"/>
+            </svg>
+            <span style="color: #1a237e; font-weight: bold;">Aire Acondicionado</span>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
+        <h2 style="text-align: center; color: #1a237e; font-size: 2em; margin-bottom: 30px;">Productos Destacados</h2>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+            {% for producto in productos %}
+                <div style="width: 300px; margin-bottom: 30px; background-color: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); overflow: hidden;">
+                    <img src="{{ producto.imagen_url }}" style="width: 100%; height: 200px; object-fit: cover;" alt="{{ producto.nombre }}">
+                    <div style="padding: 20px;">
+                        <h3 style="color: #1a237e; margin-top: 0;">{{ producto.nombre }}</h3>
+                        <p style="color: #333; margin-bottom: 15px;">{{ producto.descripcion }}</p>
+                        <p style="font-weight: bold; color: #d32f2f; font-size: 1.2em; margin-bottom: 15px;">${{ producto.precio | round(2) }}</p>
+                        <a href="{{ url_for('productos') }}" style="display: inline-block; background-color: #1a237e; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s;">Ver Más</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

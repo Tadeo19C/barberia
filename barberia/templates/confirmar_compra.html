@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}Confirmar Compra{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Resumen de tu Compra</h2>
+    {% if productos %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in productos %}
+                    <tr>
+                        <td>{{ item.producto.nombre }}</td>
+                        <td>${{ item.producto.precio }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>${{ item.producto.precio * item.cantidad }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h4>Total: ${{ total_compra }}</h4>
+        <form action="{{ url_for('confirmar_compra') }}" method="POST">
+            <div class="form-group">
+                <label for="direccion">Dirección de Envío:</label>
+                <input type="text" id="direccion" name="direccion" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="metodo_pago">Método de Pago:</label>
+                <select id="metodo_pago" name="metodo_pago" class="form-control" required>
+                    <option value="tarjeta">Tarjeta de Crédito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="efectivo">Efectivo al Entregar</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Confirmar Compra</button>
+        </form>
+    {% else %}
+        <p>No tienes productos en el carrito para comprar.</p>
+    {% endif %}
+</div>
+{% endblock %}

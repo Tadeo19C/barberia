@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}servicios{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="text-center mb-5 fw-bold">Servicios Disponibles</h2>
+    <div class="row g-4">
+        {% for servicio in servicios %}
+        <div class="col-md-4 mb-4">
+            <div class="card service-card h-100">
+                <div class="card-body text-center d-flex flex-column">
+                    <div class="service-icon mb-3">
+                        <h5 class="card-title fw-bold mb-3">{{ servicio }}</h5>
+                        <p class="card-text flex-grow-1">Ofrecemos el mejor servicio de {{ servicio }} para satisfacer tus necesidades específicas y superar tus expectativas.</p>
+                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

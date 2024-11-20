@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Productos</h1>
+    <div class="row">
+        {% for producto in productos %}
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ producto.nombre }}</h5>
+                    <p class="card-text">{{ producto.descripcion }}</p>
+                    <p class="card-text"><strong>Precio:</strong> ${{ producto.precio }}</p>
+                    {% if producto.disponible %}
+                        <!-- Botón para agregar al carrito -->
+                        <form action="{{ url_for('agregar_al_carrito', producto_id=producto.id) }}" method="POST">
+                            <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                        </form>
+                    {% else %}
+                        <button class="btn btn-secondary" disabled>No disponible</button>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

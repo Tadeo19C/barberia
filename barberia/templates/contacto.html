@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+
+<div class="barberia-contacto__content">
+    <section class="barberia-contacto__form">
+        <form action="#" method="POST">
+            <div class="barberia-contacto__form-group">
+                <label class="barberia-contacto__label" for="barberia-contacto-name">Nombre:</label>
+                <input class="barberia-contacto__input" type="text" id="barberia-contacto-name" name="name" required>
+            </div>
+            <div class="barberia-contacto__form-group">
+                <label class="barberia-contacto__label" for="barberia-contacto-email">Correo Electrónico:</label>
+                <input class="barberia-contacto__input" type="email" id="barberia-contacto-email" name="email" required>
+            </div>
+            <div class="barberia-contacto__form-group">
+                <label class="barberia-contacto__label" for="barberia-contacto-phone">Teléfono:</label>
+                <input class="barberia-contacto__input" type="tel" id="barberia-contacto-phone" name="phone">
+            </div>
+            <div class="barberia-contacto__form-group">
+                <label class="barberia-contacto__label" for="barberia-contacto-message">Mensaje:</label>
+                <textarea class="barberia-contacto__textarea" id="barberia-contacto-message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="barberia-contacto__button" type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+    <section class="barberia-contacto__info">
+        <h2>Información de Contacto</h2>
+        <p><strong>Dirección:</strong> Calle Principal 123, Ciudad, CP 12345</p>
+        <p><strong>Teléfono:</strong> (123) 456-7890</p>
+        <p><strong>Email:</strong> info@barberiaclasica.com</p>
+        <p><strong>Horario:</strong> Lunes a Domingo, 9AM - 8PM</p>
+        <div class="barberia-contacto__social-links">
+            <h3>Síguenos en:</h3>
+            <a class="barberia-contacto__social-link" href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="barberia-contacto__social-link" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="barberia-contacto__social-link" href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </div>
+    </section>
+</div>
+{% endblock %}

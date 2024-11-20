@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Agendar Cita - Barbería{% endblock %}
+
+{% block content %}
+    <h1>Agendar Cita</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+            {{ form.fecha_cita.label }}
+            {{ form.fecha_cita(class="form-control", type="date") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.servicio.label }}
+            {{ form.servicio(class="form-control") }}
+        </div>
+
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+{% endblock %}

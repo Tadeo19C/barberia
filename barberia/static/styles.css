@@ -1,0 +1,273 @@
+/* Estilos personalizados */
+
+/* Body y márgenes */
+body {
+    padding-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+/* Barra de navegación */
+nav {
+    background-color: #343a40;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    margin-right: 10px;
+}
+
+/* Contenido de la página */
+.container {
+    margin-top: 30px;
+}
+
+/* Estilos para el formulario */
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://www.peluker.com/blog/wp-content/uploads/2024/03/%C2%BFcuanto-cuesta-una-barberia.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(51, 51, 51, 0.7), rgba(17, 17, 17, 0.7));
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #f5f5f5;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #0457c4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #3d3f39;
+}
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #e17055;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.cta-button:hover {
+    background-color: #d15a45;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+.air-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #f5f5f5;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 12px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.air-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    fill: currentColor;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .air-info {
+        top: auto;
+        bottom: 70px;
+        right: 20px;
+    }
+}
+
+.barberia-contacto {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+.barberia-contacto__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.barberia-contacto__header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    text-align: center;
+}
+.barberia-contacto__title {
+    margin: 0;
+    font-size: 2.5rem;
+}
+.barberia-contacto__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.barberia-contacto__form,
+.barberia-contacto__info {
+    flex-basis: 48%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.barberia-contacto__form-group {
+    margin-bottom: 1rem;
+}
+.barberia-contacto__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.barberia-contacto__input,
+.barberia-contacto__textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.barberia-contacto__button {
+    background-color: #e17055;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.barberia-contacto__button:hover {
+    background-color: #d15a45;
+}
+.barberia-contacto__info h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+.barberia-contacto__info p {
+    margin-bottom: 1rem;
+}
+.barberia-contacto__social-links {
+    margin-top: 1rem;
+}
+.barberia-contacto__social-link {
+    display: inline-block;
+    margin-right: 1rem;
+    color: #3498db;
+    text-decoration: none;
+}
+.barberia-contacto__social-link:hover {
+    text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .barberia-contacto__form,
+    .barberia-contacto__info {
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.btn-primary {
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
